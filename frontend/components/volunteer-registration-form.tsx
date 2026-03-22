@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import type { VolunteerRole } from "@/lib/types"
+import { getApiUrl } from "@/lib/api"
 import { 
   Users, 
   User, 
@@ -26,7 +27,7 @@ const volunteerRoles: { value: VolunteerRole; label: string; description: string
   { value: "shelter", label: "Shelter", description: "Temporary housing ops", icon: Home },
 ]
 
-const API_URL = "http://localhost:5000/api/volunteers"
+const API_URL = getApiUrl("/api/volunteers")
 
 interface VolunteerRegistrationFormProps {
   onSuccess?: () => void

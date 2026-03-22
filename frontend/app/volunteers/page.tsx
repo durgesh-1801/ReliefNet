@@ -6,9 +6,10 @@ import { VolunteerRegistrationForm } from "@/components/volunteer-registration-f
 import { VolunteerList } from "@/components/volunteer-list"
 import { StatsCard } from "@/components/stats-card"
 import type { Volunteer } from "@/lib/types"
+import { getApiUrl } from "@/lib/api"
 import { Users, UserCheck, Shield } from "lucide-react"
 
-const API_URL = "http://localhost:5000/api/volunteers"
+const API_URL = getApiUrl("/api/volunteers")
 
 const VALID_ROLES = ["rescue", "medical", "logistics", "communications", "shelter"] as const
 

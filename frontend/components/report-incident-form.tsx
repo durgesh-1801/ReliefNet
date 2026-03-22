@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import type { DisasterType, Priority } from "@/lib/types"
+import { getApiUrl } from "@/lib/api"
 import { 
   AlertTriangle, 
   MapPin, 
@@ -56,7 +57,7 @@ export function ReportIncidentForm() {
     priority: "" as Priority | "",
   })
 
-  const API_URL = "http://localhost:5000/api/reports"
+  const API_URL = getApiUrl("/api/reports")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

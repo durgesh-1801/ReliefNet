@@ -5,6 +5,7 @@ import { AppShell } from "@/components/app-shell"
 import { IncidentCard } from "@/components/incident-card"
 import { StatsCard } from "@/components/stats-card"
 import type { Incident } from "@/lib/types"
+import { getApiUrl } from "@/lib/api"
 import { AlertTriangle, Clock, Users, CheckCircle, TrendingUp } from "lucide-react"
 
 const VALID_DISASTER_TYPES = ["earthquake", "flood", "fire", "hurricane", "tornado", "other"] as const
@@ -37,7 +38,7 @@ export default function DashboardPage() {
   const [incidents, setIncidents] = useState<Incident[]>([])
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/reports")
+    fetch(getApiUrl("/api/reports"))
       .then((res) => res.json())
       .then((data: unknown) => {
         const reports = Array.isArray(data) ? data : []

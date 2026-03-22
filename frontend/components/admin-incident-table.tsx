@@ -21,6 +21,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog"
 import type { Incident, Volunteer } from "@/lib/types"
+import { getApiUrl } from "@/lib/api"
 import {
   AlertTriangle,
   Droplets,
@@ -59,8 +60,8 @@ const statusConfig = {
   completed: { label: "Resolved", className: "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" },
 }
 
-const AUTO_ASSIGN_URL = "http://localhost:5000/api/auto-assign"
-const ASSIGN_URL = "http://localhost:5000/api/assign"
+const AUTO_ASSIGN_URL = getApiUrl("/api/auto-assign")
+const ASSIGN_URL = getApiUrl("/api/assign")
 
 interface AdminIncidentTableProps {
   incidents: Incident[]

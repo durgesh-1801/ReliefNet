@@ -5,10 +5,11 @@ import { AppShell } from "@/components/app-shell"
 import { AdminIncidentTable } from "@/components/admin-incident-table"
 import { StatsCard } from "@/components/stats-card"
 import type { Incident, Volunteer } from "@/lib/types"
+import { getApiUrl } from "@/lib/api"
 import { AlertTriangle, Users, Clock, CheckCircle, Activity, Zap } from "lucide-react"
 
-const REPORTS_URL = "http://localhost:5000/api/reports"
-const VOLUNTEERS_URL = "http://localhost:5000/api/volunteers"
+const REPORTS_URL = getApiUrl("/api/reports")
+const VOLUNTEERS_URL = getApiUrl("/api/volunteers")
 
 const VALID_DISASTER_TYPES = ["earthquake", "flood", "fire", "hurricane", "tornado", "other"] as const
 const VALID_ROLES = ["rescue", "medical", "logistics", "communications", "shelter"] as const
